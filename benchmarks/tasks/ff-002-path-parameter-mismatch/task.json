@@ -1,0 +1,28 @@
+{
+  "task_id": "FF-002",
+  "title": "Valid FastAPI user route request returns 422",
+  "category": "routing",
+  "provenance": "synthetic",
+  "fixture_repo": "benchmarks/fixture_repos/ff-002-path-parameter-mismatch",
+  "issue_file": "benchmarks/tasks/ff-002-path-parameter-mismatch/issue.md",
+  "gold_patch": "benchmarks/tasks/ff-002-path-parameter-mismatch/gold.patch",
+  "failing_tests": [
+    "tests/test_users.py::test_get_user_returns_user"
+  ],
+  "test_command": "python -m pytest -q",
+  "ruff_command": "python -m ruff check .",
+  "allowed_paths": [
+    "app"
+  ],
+  "buggy_files": [
+    "app/main.py"
+  ],
+  "expected_buggy_result": {
+    "passed": 1,
+    "failed": 1
+  },
+  "expected_fixed_result": {
+    "passed": 2,
+    "failed": 0
+  }
+}

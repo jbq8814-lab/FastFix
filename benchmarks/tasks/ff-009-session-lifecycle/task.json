@@ -1,0 +1,28 @@
+{
+  "task_id": "FF-009",
+  "title": "SQLAlchemy Session not closed after request ends",
+  "category": "sqlalchemy_session_lifecycle",
+  "provenance": "synthetic",
+  "fixture_repo": "benchmarks/fixture_repos/ff-009-session-lifecycle",
+  "issue_file": "benchmarks/tasks/ff-009-session-lifecycle/issue.md",
+  "gold_patch": "benchmarks/tasks/ff-009-session-lifecycle/gold.patch",
+  "failing_tests": [
+    "tests/test_users.py::test_get_db_must_be_generator"
+  ],
+  "test_command": "python -m pytest -q",
+  "ruff_command": "python -m ruff check .",
+  "allowed_paths": [
+    "app"
+  ],
+  "buggy_files": [
+    "app/database.py"
+  ],
+  "expected_buggy_result": {
+    "passed": 3,
+    "failed": 1
+  },
+  "expected_fixed_result": {
+    "passed": 4,
+    "failed": 0
+  }
+}

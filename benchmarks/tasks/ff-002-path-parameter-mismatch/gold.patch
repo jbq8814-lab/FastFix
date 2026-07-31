@@ -1,0 +1,8 @@
+diff --git a/app/main.py b/app/main.py
+index 276a66b..67f11c4 100644
+--- a/app/main.py
++++ b/app/main.py
+@@ -14,2 +14,2 @@
+-@app.get("/users/{id}", response_model=UserResponse)
++@app.get("/users/{user_id}", response_model=UserResponse)
+ async def get_user(user_id: int) -> dict[str, object]:

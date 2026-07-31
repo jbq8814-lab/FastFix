@@ -1,0 +1,16 @@
+diff --git a/app/database.py b/app/database.py
+index 6fbe08b..bfb2435 100644
+--- a/app/database.py
++++ b/app/database.py
+@@ -18,6 +18,8 @@ SessionLocal = sessionmaker(bind=engine)
+
+
+ def get_db() -> Generator[Session, None, None]:
+-    # BUG: directly returns Session without yield/finally/close
+-    # Session is never closed after request ends
+-    return SessionLocal()
++    db = SessionLocal()
++    try:
++        yield db
++    finally:
++        db.close()

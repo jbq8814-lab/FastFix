@@ -1,0 +1,28 @@
+{
+  "task_id": "FF-012",
+  "title": "The user detail endpoint returns an internal server error",
+  "category": "pydantic_field_type",
+  "provenance": "synthetic",
+  "fixture_repo": "benchmarks/fixture_repos/ff-012-response-field-type-mismatch",
+  "issue_file": "benchmarks/tasks/ff-012-response-field-type-mismatch/issue.md",
+  "gold_patch": "benchmarks/tasks/ff-012-response-field-type-mismatch/gold.patch",
+  "failing_tests": [
+    "tests/test_users.py::test_user_detail"
+  ],
+  "test_command": "python -m pytest -q",
+  "ruff_command": "python -m ruff check .",
+  "allowed_paths": [
+    "app"
+  ],
+  "buggy_files": [
+    "app/schemas.py"
+  ],
+  "expected_buggy_result": {
+    "passed": 2,
+    "failed": 1
+  },
+  "expected_fixed_result": {
+    "passed": 3,
+    "failed": 0
+  }
+}

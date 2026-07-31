@@ -1,0 +1,18 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/health")
+def health_check() -> dict[str, str]:
+    return {"status": "ok"}
+
+
+@app.get("/users/{user_id}")
+def get_user(user_id: int) -> dict[str, int]:
+    return {"id": user_id}
+
+
+@app.get("/users/me")
+def get_current_user() -> dict[str, str]:
+    return {"username": "current-user"}

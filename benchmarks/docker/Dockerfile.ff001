@@ -1,0 +1,10 @@
+FROM python:3.12-slim
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
+RUN python -m pip install --no-cache-dir fastapi httpx pytest ruff
+RUN git config --global --add safe.directory /workspace
+
+ENV PATH="/usr/local/bin:${PATH}"
+WORKDIR /workspace

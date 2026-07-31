@@ -1,0 +1,8 @@
+diff --git a/app/service.py b/app/service.py
+--- a/app/service.py
++++ b/app/service.py
+@@ -14,3 +14,4 @@ async def get_user(user_id: int) -> dict[str, object] | None:
+     user = USERS.get(user_id)
+     if user is None:
+         return None
++    return user

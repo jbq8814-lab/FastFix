@@ -1,0 +1,10 @@
+diff --git a/app/service.py b/app/service.py
+--- a/app/service.py
++++ b/app/service.py
+@@ -16,5 +16,5 @@ def create_user(db: Session, name: str) -> User:
+     user = User(name=name)
+     db.add(user)
+-    db.flush()
++    db.commit()
+     db.refresh(user)
+     return user
