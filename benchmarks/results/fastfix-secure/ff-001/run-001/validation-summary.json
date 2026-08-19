@@ -1,0 +1,32 @@
+{
+  "regression": {
+    "duration_seconds": 0.666,
+    "failed_count": null,
+    "passed": true,
+    "passed_count": 2,
+    "returncode": 0,
+    "skipped_count": null,
+    "timed_out": false
+  },
+  "revision": 1,
+  "ruff": {
+    "duration_seconds": 0.064,
+    "failed_count": null,
+    "passed": true,
+    "passed_count": null,
+    "returncode": 0,
+    "skipped_count": null,
+    "timed_out": false
+  },
+  "sandbox_image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+  "sandbox_network_mode": "none",
+  "targeted": {
+    "duration_seconds": 0.669,
+    "failed_count": null,
+    "passed": true,
+    "passed_count": 1,
+    "returncode": 0,
+    "skipped_count": null,
+    "timed_out": false
+  }
+}

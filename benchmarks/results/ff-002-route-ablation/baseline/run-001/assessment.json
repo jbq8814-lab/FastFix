@@ -1,0 +1,11 @@
+{
+  "approval_action": "rejected_after_experiment",
+  "approval_request_id": "bdce3960-08ee-4407-bdea-2a46ba917c87",
+  "arm": "baseline",
+  "gold_patch_exact_match": false,
+  "outcome": "resolved_candidate",
+  "patch_semantically_valid": true,
+  "run_id": "run-001",
+  "schema_version": "1.0",
+  "task_id": "ff-002-path-parameter-mismatch"
+}

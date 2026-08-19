@@ -1,0 +1,13 @@
+{
+  "outcome": "limits_exceeded",
+  "resolved_candidate": false,
+  "submitted": false,
+  "provider_failure_exhausted": false,
+  "latency_metrics_provider_affected": false,
+  "performance_conclusion": null,
+  "decision": null,
+  "candidate_cleaned": true,
+  "source_unchanged": true,
+  "canonical_fixture_unchanged": true,
+  "explanation": "Agent produced the correct fix (db.flush() -> db.commit() in service.py) which passed all validation gates (targeted, regression, ruff). However, the agent then attempted to remove a redundant database.py change via replace_text and apply_patch, both of which failed. This triggered rollback_changes which reverted all changes, causing the candidate to be cleaned. The agent hit step_limit=20 during the cleanup attempts, resulting in LimitsExceeded. The root cause is the editing mechanism's difficulty with removing a redundant change - the correct fix was found but could not be cleanly finalized."
+}

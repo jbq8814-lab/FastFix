@@ -1,0 +1,187 @@
+[
+  {
+    "sequence": 1,
+    "tool_name": "show_tree",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "root": ".",
+      "entry_count": 9,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 2,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "app/main.py",
+      "total_lines": 16,
+      "start_line": 1,
+      "end_line": 16,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 3,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "app/service.py",
+      "total_lines": 6,
+      "start_line": 1,
+      "end_line": 6,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 4,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "app/schemas.py",
+      "total_lines": 6,
+      "start_line": 1,
+      "end_line": 6,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 5,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "tests/test_users.py",
+      "total_lines": 17,
+      "start_line": 1,
+      "end_line": 17,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 6,
+    "tool_name": "run_pytest",
+    "ok": false,
+    "error_code": "validation_failed",
+    "metadata": {
+      "scope": "targeted",
+      "targets": [
+        "tests/test_users.py::test_get_user_returns_user"
+      ],
+      "returncode": 1,
+      "passed": null,
+      "failed": 1,
+      "skipped": null,
+      "duration_seconds": 1.5,
+      "timed_out": false,
+      "output_truncated": false
+    }
+  },
+  {
+    "sequence": 7,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_invalid",
+    "metadata": {}
+  },
+  {
+    "sequence": 8,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 9,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 10,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_invalid",
+    "metadata": {}
+  },
+  {
+    "sequence": 11,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 12,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 13,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 14,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 15,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 16,
+    "tool_name": "show_git_diff",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "changed_files": [],
+      "diff_chars": 0,
+      "truncated": false,
+      "added_lines": 0,
+      "deleted_lines": 0
+    }
+  },
+  {
+    "sequence": 17,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 18,
+    "tool_name": "apply_patch",
+    "ok": false,
+    "error_code": "patch_apply_failed",
+    "metadata": {}
+  },
+  {
+    "sequence": 19,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "app/main.py",
+      "total_lines": 16,
+      "start_line": 1,
+      "end_line": 16,
+      "truncated": false
+    }
+  }
+]

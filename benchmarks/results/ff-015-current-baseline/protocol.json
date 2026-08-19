@@ -1,0 +1,80 @@
+{
+  "protocol_version": "1.0",
+  "experiment_name": "FF-015 current FastFix unseen-task baseline",
+  "task_id": "ff-015-environment-variable-mapping",
+  "task_commit": "3cfdabfa6b1e17984bdf56441c747e344c98b7d2",
+  "system_commit": "3cfdabfa6b1e17984bdf56441c747e344c98b7d2",
+  "secure_workflow_version": "secure-workflow-v1",
+  "model_env_name": "MSWEA_MODEL_NAME",
+  "docker_image_reference": "fastfix-validation:benchmark-v1",
+  "maximum_iterations": 20,
+  "include_route_inspection": true,
+  "include_pydantic_inspection": false,
+  "timeouts": {
+    "agent_wall_seconds": 600,
+    "pytest_seconds": 60,
+    "ruff_seconds": 60
+  },
+  "provider_retry": {
+    "stop_after_attempt_env_name": "MSWEA_MODEL_RETRY_STOP_AFTER_ATTEMPT",
+    "stop_after_attempt": 10
+  },
+  "validation_commands": {
+    "targeted": [
+      "pytest",
+      "-q",
+      "tests/test_config.py::test_app_name"
+    ],
+    "regression": [
+      "pytest",
+      "-q",
+      "tests"
+    ],
+    "ruff": [
+      "ruff",
+      "check",
+      "app"
+    ]
+  },
+  "expected_changed_files": [
+    "app/config.py"
+  ],
+  "metrics": [
+    "status",
+    "exit_status",
+    "submitted",
+    "approval_pending",
+    "resolved_candidate",
+    "assistant_response_count",
+    "api_calls",
+    "input_tokens",
+    "output_tokens",
+    "elapsed_seconds",
+    "tool_call_count",
+    "tool_sequence",
+    "read_file_calls",
+    "unique_files_read",
+    "search_code_calls",
+    "inspect_fastapi_routes_calls",
+    "replace_text_calls",
+    "apply_patch_calls",
+    "patch_failures",
+    "provider_retry_count",
+    "last_provider_error_type",
+    "last_provider_status_code",
+    "provider_failure_exhausted",
+    "targeted_tests_passed",
+    "regression_tests_passed",
+    "ruff_passed",
+    "changed_files",
+    "source_unchanged",
+    "canonical_fixture_unchanged",
+    "instance_cost"
+  ],
+  "result_labels": {
+    "evaluation_role": "development_unseen_baseline",
+    "metric_eligible": false,
+    "task_provenance": "synthetic",
+    "task_external_exposure_before_run": false
+  }
+}

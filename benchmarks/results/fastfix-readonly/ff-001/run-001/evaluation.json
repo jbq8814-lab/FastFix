@@ -1,0 +1,8 @@
+{
+  "submitted": true,
+  "suspected_file_correct": true,
+  "evidence_file_coverage": true,
+  "recommended_fix_correct": true,
+  "diagnosis_correct": true,
+  "reasons": []
+}

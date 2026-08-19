@@ -1,0 +1,9 @@
+{
+  "resolved": false,
+  "failure_stage": "code_editing",
+  "failure_category": "malformed_patch_generation",
+  "root_cause": "The model identified the expected fix but repeatedly generated invalid unified Git patches.",
+  "validation_gate_effective": true,
+  "repository_modified": false,
+  "development_finding": true
+}

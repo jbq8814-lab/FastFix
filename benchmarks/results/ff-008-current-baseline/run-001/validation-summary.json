@@ -1,0 +1,7 @@
+{
+  "regression_tests_passed": false,
+  "ruff_passed": false,
+  "sandbox_image_id": null,
+  "targeted_tests_passed": false,
+  "validation_revision": 3
+}

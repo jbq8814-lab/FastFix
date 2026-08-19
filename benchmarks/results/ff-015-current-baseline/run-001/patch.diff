@@ -1,0 +1,13 @@
+diff --git a/app/config.py b/app/config.py
+index 712d84b..76cc6ed 100644
+--- a/app/config.py
++++ b/app/config.py
+@@ -2,7 +2,7 @@ import os
+ 
+ 
+ def get_app_name() -> str:
+-    app_name = os.getenv("FASTFIX_SERVICE_NAME", "FastFix")
++    app_name = os.getenv("FASTFIX_APP_NAME", "FastFix")
+     return app_name
+ 
+ 

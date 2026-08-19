@@ -1,0 +1,5 @@
+{
+  "exit_status": "BadGatewayError",
+  "failure_category": "agent_exception",
+  "failure_stage": "repair"
+}

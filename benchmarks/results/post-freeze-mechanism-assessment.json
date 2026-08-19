@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "evaluation_role": "post_freeze_scripted_mechanism_evaluation",
+  "formal_benchmark": false,
+  "metric_eligible": false,
+  "provider_calls": 0,
+  "frozen_run_001_replayed": false,
+  "historical_tasks_rerun": false,
+  "original_development_validated_candidate_rate": "11/13",
+  "aggregate_denominator_merged": false,
+  "source_baseline_commit": "6b404165c8d8d7a8808af1ae3133a927717ac432",
+  "generator": "benchmarks/scripts/build_post_freeze_mechanism_assessment.py",
+  "scenarios": [
+    {
+      "id": "ff008_root_cause_scripted_reproduction",
+      "outcome": "submitted_after_post_validation_edit_was_locked",
+      "submitted": true,
+      "revision": 1,
+      "candidate_content": "value = 2\n",
+      "validation_current": true,
+      "blocked_error_codes": [
+        "repair_ready_locked",
+        "repair_ready_locked"
+      ],
+      "candidate_diff_unchanged_after_blocks": true,
+      "show_diff_succeeded": true
+    },
+    {
+      "id": "reopen_invalidates_validation",
+      "outcome": "revalidated_and_submitted",
+      "submitted": true,
+      "reopen_count": 1,
+      "revision": 2,
+      "premature_submit_error": "validation_incomplete",
+      "candidate_content": "value = 3\n"
+    },
+    {
+      "id": "validation_failure_retention",
+      "outcome": "failure_retained_until_script_limit",
+      "exit_status": "LimitsExceeded",
+      "state_card_failed_current": true,
+      "active_context_retained_failure": true
+    },
+    {
+      "id": "deterministic_context_projection",
+      "outcome": "submitted_with_protocol_valid_projected_context",
+      "submitted": true,
+      "compacted_message_count": 34,
+      "trajectory_unchanged": true,
+      "tool_pairs_valid": true
+    }
+  ],
+  "metrics": {
+    "scripted_scenarios": 4,
+    "ready_state_illegal_action_attempts": 2,
+    "ready_state_illegal_action_blocks": 2,
+    "ready_state_illegal_action_block_rate": 1.0,
+    "stale_validation_exposure_count": 0,
+    "state_card_policy_checks": 6,
+    "state_card_policy_consistency_rate": 1.0,
+    "required_context_retention_checks": 13,
+    "required_context_retention_rate": 1.0,
+    "raw_context_chars": 1219944,
+    "projected_context_chars": 720905,
+    "context_reduction_ratio": 0.409067,
+    "context_character_scope": "cumulative_model_visible_characters_across_calls",
+    "model_call_count": 14,
+    "max_raw_chars_per_call": 150615,
+    "max_projected_chars_per_call": 72796,
+    "average_raw_chars_per_call": 87138.857143,
+    "average_projected_chars_per_call": 51493.214286,
+    "configured_projection_limit": 80000,
+    "calls_exceeding_projection_limit": 0
+  }
+}

@@ -1,0 +1,21 @@
+diff --git a/app/main.py b/app/main.py
+--- a/app/main.py
++++ b/app/main.py
+@@ -1,4 +1,4 @@
+-from fastapi import FastAPI
++from fastapi import FastAPI, status
+ 
+ from app.schemas import UserCreate, UserResponse
+ from app.service import create_user
+@@ -11,6 +11,10 @@ async def health_check() -> dict[str, str]:
+     return {"status": "ok"}
+ 
+ 
+-@app.post("/users", response_model=UserResponse)
++@app.post(
++    "/users",
++    response_model=UserResponse,
++    status_code=status.HTTP_201_CREATED,
++)
+ async def create_user_endpoint(payload: UserCreate) -> dict[str, object]:
+     return await create_user(payload.name)

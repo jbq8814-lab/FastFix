@@ -1,0 +1,11 @@
+diff --git a/app/schemas.py b/app/schemas.py
+index b80d4e7..436abf9 100644
+--- a/app/schemas.py
++++ b/app/schemas.py
+@@ -2,5 +2,5 @@ from pydantic import BaseModel
+ 
+ 
+ class UserResponse(BaseModel):
+-    id: str
++    id: int
+     name: str

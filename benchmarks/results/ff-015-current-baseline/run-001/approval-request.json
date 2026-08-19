@@ -1,0 +1,24 @@
+{
+  "added_lines": 1,
+  "candidate_head": "a146ddf6fa9da161e539fec40803f20c7ca105c4",
+  "changed_files": [
+    "app/config.py"
+  ],
+  "created_at": "2026-07-30T10:58:25.298844Z",
+  "deleted_lines": 1,
+  "patch_sha256": "f82ee8fae0d6dec4e4d9fc4b2e6c0bd3d8b8e86b8730219bbfa9d3c93e8d0381",
+  "regression_tests_passed": true,
+  "request_id": "6281dfc2-8ebb-4f25-80cc-6213f827e532",
+  "risk_notes": [
+    "Candidate patch is pending explicit human approval."
+  ],
+  "ruff_passed": true,
+  "sandbox_image_id": "sha256:ae97b783a4a4af094d79e1409f802d0732bee82ad82c03a6eee59203934db4ae",
+  "sandbox_network_mode": "none",
+  "schema_version": "1.0",
+  "source_head": "a146ddf6fa9da161e539fec40803f20c7ca105c4",
+  "status": "pending",
+  "targeted_tests_passed": true,
+  "task_id": "ff-015-environment-variable-mapping",
+  "validation_revision": 1
+}

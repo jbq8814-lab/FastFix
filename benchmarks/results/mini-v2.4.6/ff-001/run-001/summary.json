@@ -1,0 +1,22 @@
+{
+  "task_id": "FF-001",
+  "run_id": "run-001",
+  "baseline": "mini-swe-agent-v2.4.6",
+  "model": "MiniMax-M2.7-bf16",
+  "exit_status": "BadRequestError",
+  "api_calls": 1,
+  "execution_steps": 1,
+  "instance_cost": 0.0,
+  "elapsed_seconds": 255.281,
+  "changed_files": [
+    "app/__pycache__/__init__.cpython-312.pyc",
+    "app/__pycache__/main.cpython-312.pyc",
+    "app/__pycache__/schemas.cpython-312.pyc",
+    "app/__pycache__/service.cpython-312.pyc",
+    "tests/__pycache__/test_users.cpython-312-pytest-9.1.1.pyc"
+  ],
+  "pytest_passed": false,
+  "ruff_passed": true,
+  "resolved": false,
+  "agent_error": "BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=MiniMax-M2.7-bf16\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+}

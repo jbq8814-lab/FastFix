@@ -1,0 +1,96 @@
+{
+  "arms": {
+    "baseline": {
+      "api_calls": 10,
+      "apply_patch_calls": 0,
+      "approval_pending": true,
+      "canonical_fixture_unchanged": true,
+      "changed_files": [
+        "app/main.py"
+      ],
+      "elapsed_seconds": 52.922,
+      "exit_status": "Submitted",
+      "input_tokens": 30690,
+      "inspect_fastapi_routes_calls": 0,
+      "instance_cost": null,
+      "output_tokens": 1060,
+      "patch_failures": 0,
+      "provider_retry_count": 0,
+      "read_file_calls": 2,
+      "regression_tests_passed": true,
+      "replace_text_calls": 1,
+      "resolved_candidate": true,
+      "ruff_passed": true,
+      "search_code_calls": 0,
+      "source_unchanged": true,
+      "submitted": true,
+      "targeted_tests_passed": true,
+      "tool_call_count": 9,
+      "tool_sequence": [
+        "show_tree",
+        "read_file",
+        "read_file",
+        "replace_text",
+        "run_pytest",
+        "run_pytest",
+        "run_ruff",
+        "show_git_diff",
+        "submit_repair"
+      ],
+      "unique_files_read": []
+    },
+    "route": {
+      "api_calls": 8,
+      "apply_patch_calls": 0,
+      "approval_pending": false,
+      "canonical_fixture_unchanged": true,
+      "changed_files": [
+        "app/main.py"
+      ],
+      "elapsed_seconds": 398.344,
+      "exit_status": "BadGatewayError",
+      "input_tokens": 19598,
+      "inspect_fastapi_routes_calls": 0,
+      "instance_cost": null,
+      "output_tokens": 1031,
+      "patch_failures": 0,
+      "provider_retry_count": 20,
+      "read_file_calls": 2,
+      "regression_tests_passed": true,
+      "replace_text_calls": 1,
+      "resolved_candidate": false,
+      "ruff_passed": false,
+      "search_code_calls": 0,
+      "source_unchanged": true,
+      "submitted": false,
+      "targeted_tests_passed": true,
+      "tool_call_count": 6,
+      "tool_sequence": [
+        "show_tree",
+        "read_file",
+        "read_file",
+        "replace_text",
+        "run_pytest",
+        "run_pytest"
+      ],
+      "unique_files_read": []
+    }
+  },
+  "differences_route_minus_baseline": {
+    "api_calls": -2,
+    "apply_patch_calls": 0,
+    "elapsed_seconds": 345.422,
+    "input_tokens": -11092,
+    "inspect_fastapi_routes_calls": 0,
+    "output_tokens": -29,
+    "patch_failures": 0,
+    "provider_retry_count": 20,
+    "read_file_calls": 0,
+    "replace_text_calls": 0,
+    "search_code_calls": 0,
+    "tool_call_count": -3
+  },
+  "interpretation": null,
+  "protocol_version": "1.0",
+  "task_id": "ff-002-path-parameter-mismatch"
+}

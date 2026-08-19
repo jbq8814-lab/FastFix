@@ -1,0 +1,13 @@
+diff --git a/app/dependencies.py b/app/dependencies.py
+index cb37f1c..83e0bbf 100644
+--- a/app/dependencies.py
++++ b/app/dependencies.py
+@@ -7,7 +7,7 @@ def require_api_key(
+     x_api_key: Annotated[str | None, Header(alias="X-API-Key")] = None,
+ ) -> str:
+     if x_api_key != "fastfix-secret":
+-        HTTPException(
++        raise HTTPException(
+             status_code=status.HTTP_401_UNAUTHORIZED,
+             detail="Invalid API key",
+         )

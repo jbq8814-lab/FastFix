@@ -1,0 +1,59 @@
+[
+  {
+    "sequence": 1,
+    "tool_name": "show_tree",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "root": ".",
+      "entry_count": 9,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 2,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "app/main.py",
+      "total_lines": 16,
+      "start_line": 1,
+      "end_line": 16,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 3,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "app/service.py",
+      "total_lines": 6,
+      "start_line": 1,
+      "end_line": 6,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 4,
+    "tool_name": "read_file",
+    "ok": true,
+    "error_code": null,
+    "metadata": {
+      "path": "tests/test_users.py",
+      "total_lines": 17,
+      "start_line": 1,
+      "end_line": 17,
+      "truncated": false
+    }
+  },
+  {
+    "sequence": 5,
+    "tool_name": "submit_diagnosis",
+    "ok": true,
+    "error_code": null,
+    "metadata": {}
+  }
+]

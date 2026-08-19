@@ -1,0 +1,12 @@
+{
+  "actor": "fastfix-release-audit-closeout",
+  "application_sha256": null,
+  "decided_at": "2026-07-30T12:32:59.331073Z",
+  "decision": "reject",
+  "note": "Release-preparation audit completion on 2026-07-30: FF-009 was still approval_pending. This reject completes the pending approval without applying the Candidate and did not occur during the original baseline run.",
+  "package_manifest_sha256": "75898ad83aeaaac98c213f23649259202778b5cf92c20415abec443d86fa3fac",
+  "patch_sha256": "4bee50abf5eddac81332ae5ec1f7120d64f02926a2f43b4d834b8b38d37ea0ae",
+  "request_id": "66ed76ed-fbd7-48e3-a1cc-76e58f81db74",
+  "schema_version": "1.0",
+  "source_head": "7b9490b256e75f18b2815e33752acd7a2e3b374e"
+}

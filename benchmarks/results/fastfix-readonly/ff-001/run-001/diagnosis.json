@@ -1,0 +1,24 @@
+{
+  "summary": "Async function `fetch_user` in app/service.py is not awaited in the route handler",
+  "root_cause": "The route handler `get_user` in app/main.py calls the async function `fetch_user` without using `await`. This causes the coroutine object to be returned instead of the actual dictionary result, leading to a serialization error and HTTP 500 response.",
+  "evidence": [
+    {
+      "path": "app/service.py",
+      "start_line": 4,
+      "end_line": 5,
+      "reason": "fetch_user is an async function that returns a coroutine"
+    },
+    {
+      "path": "app/main.py",
+      "start_line": 16,
+      "end_line": 16,
+      "reason": "fetch_user(user_id) is called without await, returning a coroutine instead of the dict value"
+    }
+  ],
+  "suspected_files": [
+    "app/main.py",
+    "app/service.py"
+  ],
+  "recommended_fix": "In app/main.py line 16, change `return fetch_user(user_id)` to `return await fetch_user(user_id)`",
+  "confidence": 1.0
+}

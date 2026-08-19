@@ -1,0 +1,12 @@
+{
+  "arm": "route",
+  "candidate_patch_available": true,
+  "candidate_tests_passed": true,
+  "failure_category": "provider_bad_gateway_exhausted",
+  "failure_stage": "model_interaction",
+  "outcome": "provider_failure",
+  "run_id": "run-001",
+  "schema_version": "1.0",
+  "task_id": "ff-002-path-parameter-mismatch",
+  "validation_complete": false
+}

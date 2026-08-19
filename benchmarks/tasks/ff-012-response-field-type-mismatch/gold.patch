@@ -1,0 +1,8 @@
+diff --git a/app/schemas.py b/app/schemas.py
+--- a/app/schemas.py
++++ b/app/schemas.py
+@@ -4,3 +4,3 @@
+ class UserResponse(BaseModel):
+-    id: str
++    id: int
+     name: str

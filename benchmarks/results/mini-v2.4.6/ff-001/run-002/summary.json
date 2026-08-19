@@ -1,0 +1,28 @@
+{
+  "task_id": "FF-001",
+  "run_id": "run-002",
+  "run_sequence": 2,
+  "baseline": "mini-swe-agent-v2.4.6",
+  "model": "openai/MiniMax-M2.7-bf16",
+  "exit_status": "",
+  "api_calls": 12,
+  "execution_steps": 12,
+  "instance_cost": null,
+  "cost_status": "unavailable",
+  "cost_limit_reliable": false,
+  "input_tokens": 22216,
+  "output_tokens": 933,
+  "benchmark_eligible": true,
+  "benchmark_attempt": 1,
+  "assistant_response_count": 11,
+  "failure_stage": null,
+  "failure_category": null,
+  "elapsed_seconds": 123.188,
+  "changed_files": [
+    "app/main.py"
+  ],
+  "pytest_passed": true,
+  "ruff_passed": true,
+  "resolved": true,
+  "agent_error": "UnicodeEncodeError: 'gbk' codec can't encode character '\\u2713' in position 17: illegal multibyte sequence"
+}

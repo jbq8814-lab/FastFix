@@ -1,0 +1,17 @@
+diff --git a/app/main.py b/app/main.py
+index 0eb5d12..217d5bb 100644
+--- a/app/main.py
++++ b/app/main.py
+@@ -1,4 +1,4 @@
+-from fastapi import FastAPI
++from fastapi import Depends, FastAPI
+ 
+ from app.dependencies import require_api_key
+ 
+@@ -11,5 +11,5 @@ async def health_check() -> dict[str, str]:
+ 
+ 
+ @app.get("/protected")
+-async def read_protected(api_key: str) -> dict[str, str]:
++async def read_protected(api_key: str = Depends(require_api_key)) -> dict[str, str]:
+     return {"message": "Access granted", "api_key": api_key}

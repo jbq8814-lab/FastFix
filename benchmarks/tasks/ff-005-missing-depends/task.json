@@ -1,0 +1,29 @@
+{
+  "task_id": "FF-005",
+  "title": "Protected endpoint does not use API key validation",
+  "category": "fastapi_dependency_injection",
+  "provenance": "synthetic",
+  "fixture_repo": "benchmarks/fixture_repos/ff-005-missing-depends",
+  "issue_file": "benchmarks/tasks/ff-005-missing-depends/issue.md",
+  "gold_patch": "benchmarks/tasks/ff-005-missing-depends/gold.patch",
+  "failing_tests": [
+    "tests/test_api.py::test_protected_without_api_key_returns_401",
+    "tests/test_api.py::test_protected_with_valid_api_key_returns_200"
+  ],
+  "test_command": "python -m pytest -q",
+  "ruff_command": "python -m ruff check .",
+  "allowed_paths": [
+    "app"
+  ],
+  "buggy_files": [
+    "app/main.py"
+  ],
+  "expected_buggy_result": {
+    "passed": 1,
+    "failed": 2
+  },
+  "expected_fixed_result": {
+    "passed": 3,
+    "failed": 0
+  }
+}

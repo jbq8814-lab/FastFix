@@ -1,0 +1,7 @@
+diff --git a/app/main.py b/app/main.py
+index 6292657..67f11c4 100644
+--- a/app/main.py
++++ b/app/main.py
+@@ -16 +16 @@ async def get_user(user_id: int) -> dict[str, object]:
+-    return fetch_user(user_id)
++    return await fetch_user(user_id)

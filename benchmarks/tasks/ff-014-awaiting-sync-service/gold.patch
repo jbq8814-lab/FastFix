@@ -1,0 +1,8 @@
+diff --git a/app/main.py b/app/main.py
+--- a/app/main.py
++++ b/app/main.py
+@@ -19,3 +19,3 @@
+ @app.get("/users/{user_id}")
+ async def get_user(user_id: int) -> dict[str, int | str]:
+-    return await user_service.get_user(user_id)
++    return user_service.get_user(user_id)

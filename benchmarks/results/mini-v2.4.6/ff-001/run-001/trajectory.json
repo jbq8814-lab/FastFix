@@ -1,0 +1,88 @@
+{
+  "info": {
+    "model_stats": {
+      "instance_cost": 0.0,
+      "api_calls": 1
+    },
+    "config": {
+      "agent": {
+        "system_template": "You are a helpful assistant that can interact with a computer.\n",
+        "instance_template": "Please solve this issue: {{task}}\n\nYou can execute bash commands and edit files to implement the necessary changes.\n\n## Recommended Workflow\n\nThis workflow should be done step-by-step so that you can iterate on your changes and any possible problems.\n\n1. Analyze the codebase by finding and reading relevant files\n2. Create a script to reproduce the issue\n3. Edit the source code to resolve the issue\n4. Verify your fix works by running your script again\n5. Test edge cases to ensure your fix is robust\n6. Submit your changes and finish your work by issuing the following command: `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`.\n   Do not combine it with any other command. <important>After this command, you cannot continue working on this task.</important>\n\n## Command Execution Rules\n\nYou are operating in an environment where\n\n1. You issue at least one command\n2. The system executes the command(s) in a subshell\n3. You see the result(s)\n4. You write your next command(s)\n\nEach response should include:\n\n1. **Reasoning text** where you explain your analysis and plan\n2. At least one tool call with your command\n\n**CRITICAL REQUIREMENTS:**\n\n- Your response SHOULD include reasoning text explaining what you're doing\n- Your response MUST include AT LEAST ONE bash tool call\n- Directory or environment variable changes are not persistent. Every action is executed in a new subshell.\n- However, you can prefix any action with `MY_ENV_VAR=MY_VALUE cd /path/to/working/dir && ...` or write/load environment variables from files\n- Submit your changes and finish your work by issuing the following command: `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`.\n  Do not combine it with any other command. <important>After this command, you cannot continue working on this task.</important>\n\nExample of a CORRECT response:\n<example_response>\nI need to understand the structure of the repository first. Let me check what files are in the current directory to get a better understanding of the codebase.\n\n[Makes bash tool call with {\"command\": \"ls -la\"} as arguments]\n</example_response>\n\n<system_information>\n{{system}} {{release}} {{version}} {{machine}}\n</system_information>\n\n## Useful command examples\n\n### Create a new file:\n\n```bash\ncat <<'EOF' > newfile.py\nimport numpy as np\nhello = \"world\"\nprint(hello)\nEOF\n```\n\n### Edit files with sed:\n\n{%- if system == \"Darwin\" -%}\n<important>\nYou are on MacOS. For all the below examples, you need to use `sed -i ''` instead of `sed -i`.\n</important>\n{%- endif -%}\n\n```bash\n# Replace all occurrences\nsed -i 's/old_string/new_string/g' filename.py\n\n# Replace only first occurrence\nsed -i 's/old_string/new_string/' filename.py\n\n# Replace first occurrence on line 1\nsed -i '1s/old_string/new_string/' filename.py\n\n# Replace all occurrences in lines 1-10\nsed -i '1,10s/old_string/new_string/g' filename.py\n```\n\n### View file content:\n\n```bash\n# View specific lines with numbers\nnl -ba filename.py | sed -n '10,20p'\n```\n\n### Any other command you want to run\n\n```bash\nanything\n```\n",
+        "step_limit": 20,
+        "cost_limit": 1.0,
+        "wall_time_limit_seconds": 600,
+        "max_consecutive_format_errors": 3,
+        "output_path": "<repo>\\benchmarks\\results\\mini-v2.4.6\\ff-001\\run-001\\trajectory.json",
+        "mode": "yolo",
+        "whitelist_actions": [],
+        "confirm_exit": false
+      },
+      "agent_type": "minisweagent.agents.interactive.InteractiveAgent",
+      "model": {
+        "model_name": "MiniMax-M2.7-bf16",
+        "model_kwargs": {
+          "drop_params": true
+        },
+        "litellm_model_registry": null,
+        "set_cache_control": null,
+        "cost_tracking": "default",
+        "format_error_template": "{% if finish_reason is defined and (finish_reason == \"length\" or (finish_reason == \"tool_calls\" and not has_tool_calls)) -%}\nYour previous response reached the output token limit (finish_reason={{ finish_reason }}) before you produced a tool call, so it was cut off. Respond more concisely and finish with exactly one bash tool call. If you need to think more, do so briefly.\n{%- else -%}\nTool call error:\n\n<error>\n{{error}}\n</error>\n\nHere is general guidance on how to submit correct toolcalls:\n\nEvery response needs to use the 'bash' tool at least once to execute commands.\n\nCall the bash tool with your command as the argument:\n- Tool: bash\n- Arguments: {\"command\": \"your_command_here\"}\n\nIf you want to end the task, please issue the following command: `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`\nwithout any other command.\n{%- endif %}\n",
+        "observation_template": "{%- if output.output | length < 10000 -%}\n{\n  \"returncode\": {{ output.returncode }},\n  \"output\": {{ output.output | tojson }}\n  {%- if output.exception_info %}, \"exception_info\": {{ output.exception_info | tojson }}{% endif %}\n}\n{%- else -%}\n{\n  \"returncode\": {{ output.returncode }},\n  \"output_head\": {{ output.output[:5000] | tojson }},\n  \"output_tail\": {{ output.output[-5000:] | tojson }},\n  \"elided_chars\": {{ output.output | length - 10000 }},\n  \"warning\": \"Output too long.\"\n  {%- if output.exception_info %}, \"exception_info\": {{ output.exception_info | tojson }}{% endif %}\n}\n{%- endif -%}\n",
+        "multimodal_regex": ""
+      },
+      "model_type": "minisweagent.models.litellm_model.LitellmModel",
+      "environment": {
+        "image": "fastfix-ff001-baseline:py312",
+        "cwd": "/workspace",
+        "env": {
+          "PAGER": "cat",
+          "MANPAGER": "cat",
+          "LESS": "-R",
+          "PIP_PROGRESS_BAR": "off",
+          "TQDM_DISABLE": "1"
+        },
+        "forward_env": [],
+        "timeout": 90,
+        "executable": "docker",
+        "run_args": [
+          "--rm",
+          "--network",
+          "none",
+          "--mount",
+          "type=bind,source=<repo>\\benchmarks\\.ff001-baseline-tj3h9ps2\\repository,target=/workspace"
+        ],
+        "container_timeout": "2h",
+        "pull_timeout": 120,
+        "interpreter": [
+          "bash",
+          "-lc"
+        ]
+      },
+      "environment_type": "minisweagent.environments.docker.DockerEnvironment"
+    },
+    "mini_version": "2.4.6",
+    "exit_status": "BadRequestError",
+    "submission": ""
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant that can interact with a computer."
+    },
+    {
+      "role": "user",
+      "content": "Please solve this issue: # `/users/{user_id}` returns an internal server error\n\n## Observed behavior\n\n- `GET /health` returns a successful response.\n- `GET /users/7` returns HTTP 500.\n- `tests/test_users.py::test_get_user_returns_user` fails.\n\n## Expected behavior\n\n`GET /users/7` should return HTTP 200 with:\n\n```json\n{\"id\": 7, \"name\": \"Ada Lovelace\"}\n```\n\nRun `python -m pytest -q` to reproduce the failure.\n\n\nYou can execute bash commands and edit files to implement the necessary changes.\n\n## Recommended Workflow\n\nThis workflow should be done step-by-step so that you can iterate on your changes and any possible problems.\n\n1. Analyze the codebase by finding and reading relevant files\n2. Create a script to reproduce the issue\n3. Edit the source code to resolve the issue\n4. Verify your fix works by running your script again\n5. Test edge cases to ensure your fix is robust\n6. Submit your changes and finish your work by issuing the following command: `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`.\n   Do not combine it with any other command. <important>After this command, you cannot continue working on this task.</important>\n\n## Command Execution Rules\n\nYou are operating in an environment where\n\n1. You issue at least one command\n2. The system executes the command(s) in a subshell\n3. You see the result(s)\n4. You write your next command(s)\n\nEach response should include:\n\n1. **Reasoning text** where you explain your analysis and plan\n2. At least one tool call with your command\n\n**CRITICAL REQUIREMENTS:**\n\n- Your response SHOULD include reasoning text explaining what you're doing\n- Your response MUST include AT LEAST ONE bash tool call\n- Directory or environment variable changes are not persistent. Every action is executed in a new subshell.\n- However, you can prefix any action with `MY_ENV_VAR=MY_VALUE cd /path/to/working/dir && ...` or write/load environment variables from files\n- Submit your changes and finish your work by issuing the following command: `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`.\n  Do not combine it with any other command. <important>After this command, you cannot continue working on this task.</important>\n\nExample of a CORRECT response:\n<example_response>\nI need to understand the structure of the repository first. Let me check what files are in the current directory to get a better understanding of the codebase.\n\n[Makes bash tool call with {\"command\": \"ls -la\"} as arguments]\n</example_response>\n\n<system_information>\nWindows 11 10.0.22631 AMD64\n</system_information>\n\n## Useful command examples\n\n### Create a new file:\n\n```bash\ncat <<'EOF' > newfile.py\nimport numpy as np\nhello = \"world\"\nprint(hello)\nEOF\n```\n\n### Edit files with sed:```bash\n# Replace all occurrences\nsed -i 's/old_string/new_string/g' filename.py\n\n# Replace only first occurrence\nsed -i 's/old_string/new_string/' filename.py\n\n# Replace first occurrence on line 1\nsed -i '1s/old_string/new_string/' filename.py\n\n# Replace all occurrences in lines 1-10\nsed -i '1,10s/old_string/new_string/g' filename.py\n```\n\n### View file content:\n\n```bash\n# View specific lines with numbers\nnl -ba filename.py | sed -n '10,20p'\n```\n\n### Any other command you want to run\n\n```bash\nanything\n```"
+    },
+    {
+      "role": "exit",
+      "content": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=MiniMax-M2.7-bf16\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers",
+      "extra": {
+        "exit_status": "BadRequestError",
+        "submission": "",
+        "exception_str": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=MiniMax-M2.7-bf16\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers",
+        "traceback": "Traceback (most recent call last):\n  File \"<repo>\\src\\minisweagent\\agents\\default.py\", line 98, in run\n    self.step()\n  File \"<repo>\\src\\minisweagent\\agents\\interactive.py\", line 113, in step\n    return super().step()\n           ^^^^^^^^^^^^^^\n  File \"<repo>\\src\\minisweagent\\agents\\default.py\", line 128, in step\n    return self.execute_actions(self.query())\n                                ^^^^^^^^^^^^\n  File \"<repo>\\src\\minisweagent\\agents\\interactive.py\", line 74, in query\n    return super().query()\n           ^^^^^^^^^^^^^^^\n  File \"<repo>\\src\\minisweagent\\agents\\default.py\", line 149, in query\n    message = self.model.query(self.messages)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\src\\minisweagent\\models\\litellm_model.py\", line 82, in query\n    for attempt in retry(logger=logger, abort_exceptions=self.abort_exceptions):\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\.venv\\Lib\\site-packages\\tenacity\\__init__.py\", line 438, in __iter__\n    do = self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\.venv\\Lib\\site-packages\\tenacity\\__init__.py\", line 371, in iter\n    result = action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\.venv\\Lib\\site-packages\\tenacity\\__init__.py\", line 413, in exc_check\n    raise retry_exc.reraise()\n          ^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\.venv\\Lib\\site-packages\\tenacity\\__init__.py\", line 184, in reraise\n    raise self.last_attempt.result()\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<home>\\AppData\\Local\\Python\\pythoncore-3.12-64\\Lib\\concurrent\\futures\\_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"<home>\\AppData\\Local\\Python\\pythoncore-3.12-64\\Lib\\concurrent\\futures\\_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"<repo>\\src\\minisweagent\\models\\litellm_model.py\", line 84, in query\n    response = self._query(self._prepare_messages_for_api(messages), **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\src\\minisweagent\\models\\litellm_model.py\", line 66, in _query\n    return litellm.completion(\n           ^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\.venv\\Lib\\site-packages\\litellm\\utils.py\", line 1577, in wrapper\n    raise e\n  File \"<repo>\\.venv\\Lib\\site-packages\\litellm\\utils.py\", line 1425, in wrapper\n    result = original_function(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>\\.venv\\Lib\\site-packages\\litellm\\main.py\", line 5657, in completion\n    raise exception_type(\n  File \"<repo>\\.venv\\Lib\\site-packages\\litellm\\main.py\", line 5115, in completion\n    model, custom_llm_provider, dynamic_api_key, api_base = get_llm_provider(\n                                                            ^^^^^^^^^^^^^^^^^\n  File \"<repo>\\.venv\\Lib\\site-packages\\litellm\\litellm_core_utils\\get_llm_provider_logic.py\", line 504, in get_llm_provider\n    raise e\n  File \"<repo>\\.venv\\Lib\\site-packages\\litellm\\litellm_core_utils\\get_llm_provider_logic.py\", line 491, in get_llm_provider\n    raise litellm.exceptions.BadRequestError(  # type: ignore\nlitellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=MiniMax-M2.7-bf16\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers\n"
+      }
+    }
+  ],
+  "trajectory_format": "mini-swe-agent-1.1"
+}

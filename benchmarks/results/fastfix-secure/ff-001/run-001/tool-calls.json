@@ -1,0 +1,243 @@
+[
+  {
+    "error_code": null,
+    "metadata": {
+      "entry_count": 9,
+      "root": ".",
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 1,
+    "tool_name": "show_tree"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "end_line": 16,
+      "path": "app/main.py",
+      "start_line": 1,
+      "total_lines": 16,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 2,
+    "tool_name": "read_file"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "end_line": 6,
+      "path": "app/service.py",
+      "start_line": 1,
+      "total_lines": 6,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 3,
+    "tool_name": "read_file"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "end_line": 6,
+      "path": "app/schemas.py",
+      "start_line": 1,
+      "total_lines": 6,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 4,
+    "tool_name": "read_file"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "end_line": 17,
+      "path": "tests/test_users.py",
+      "start_line": 1,
+      "total_lines": 17,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 5,
+    "tool_name": "read_file"
+  },
+  {
+    "error_code": "validation_failed",
+    "metadata": {
+      "candidate_writable": false,
+      "container_exit_code": 1,
+      "container_id": "3564dd1c134785fc7b1ed09409647d384111c29f5594d36dd9b6f56960830fa7",
+      "container_name": "fastfix-validation-512781467a104087b24961faec73dce2",
+      "container_oom_killed": false,
+      "container_state_error": "",
+      "container_uid": 65532,
+      "docker_architecture": "amd64",
+      "docker_os_type": "linux",
+      "docker_server_version": "29.6.2",
+      "docker_socket_present": false,
+      "duration_seconds": 1.021,
+      "failed": 1,
+      "image_digest": "fastfix-validation@sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_reference": "fastfix-validation:ff001-v1",
+      "network_mode": "none",
+      "output_truncated": false,
+      "passed": null,
+      "returncode": 1,
+      "runner_output_truncated": false,
+      "scope": "targeted",
+      "skipped": null,
+      "targets": [
+        "tests/test_users.py::test_get_user_returns_user"
+      ],
+      "timed_out": false
+    },
+    "ok": false,
+    "sequence": 6,
+    "tool_name": "run_pytest"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "bytes_after": 364,
+      "bytes_before": 358,
+      "changed_files": [
+        "app/main.py"
+      ],
+      "path": "app/main.py",
+      "replacement_count": 1
+    },
+    "ok": true,
+    "sequence": 7,
+    "tool_name": "replace_text"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "candidate_writable": false,
+      "container_exit_code": 0,
+      "container_id": "cf9e061c54fd20b0cf39fa8513cad38747521aa3d09a5665c809cf0ee05edc7c",
+      "container_name": "fastfix-validation-c93aa7111273450aa1d844d8f86ef59a",
+      "container_oom_killed": false,
+      "container_state_error": "",
+      "container_uid": 65532,
+      "docker_architecture": "amd64",
+      "docker_os_type": "linux",
+      "docker_server_version": "29.6.2",
+      "docker_socket_present": false,
+      "duration_seconds": 0.669,
+      "failed": null,
+      "image_digest": "fastfix-validation@sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_reference": "fastfix-validation:ff001-v1",
+      "network_mode": "none",
+      "output_truncated": false,
+      "passed": 1,
+      "returncode": 0,
+      "runner_output_truncated": false,
+      "scope": "targeted",
+      "skipped": null,
+      "targets": [
+        "tests/test_users.py::test_get_user_returns_user"
+      ],
+      "timed_out": false
+    },
+    "ok": true,
+    "sequence": 8,
+    "tool_name": "run_pytest"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "candidate_writable": false,
+      "container_exit_code": 0,
+      "container_id": "ddb27b390dbf04abeb8d02f11609cd5090f356ac2b8559358ac832592f3fb679",
+      "container_name": "fastfix-validation-2b1c02b1a87147f8af46ed2d09f0b0fb",
+      "container_oom_killed": false,
+      "container_state_error": "",
+      "container_uid": 65532,
+      "docker_architecture": "amd64",
+      "docker_os_type": "linux",
+      "docker_server_version": "29.6.2",
+      "docker_socket_present": false,
+      "duration_seconds": 0.666,
+      "failed": null,
+      "image_digest": "fastfix-validation@sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_reference": "fastfix-validation:ff001-v1",
+      "network_mode": "none",
+      "output_truncated": false,
+      "passed": 2,
+      "returncode": 0,
+      "runner_output_truncated": false,
+      "scope": "regression",
+      "skipped": null,
+      "targets": [
+        "tests"
+      ],
+      "timed_out": false
+    },
+    "ok": true,
+    "sequence": 9,
+    "tool_name": "run_pytest"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "candidate_writable": false,
+      "container_exit_code": 0,
+      "container_id": "e768504edd31e0910f0db4f5930b95d01ff1006b4e65de639b8bd7b231c5c630",
+      "container_name": "fastfix-validation-a03bda36651b4f25b1e859f13c4550f2",
+      "container_oom_killed": false,
+      "container_state_error": "",
+      "container_uid": 65532,
+      "docker_architecture": "amd64",
+      "docker_os_type": "linux",
+      "docker_server_version": "29.6.2",
+      "docker_socket_present": false,
+      "duration_seconds": 0.064,
+      "image_digest": "fastfix-validation@sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+      "image_reference": "fastfix-validation:ff001-v1",
+      "network_mode": "none",
+      "output_truncated": false,
+      "passed": true,
+      "paths": [
+        "app"
+      ],
+      "returncode": 0,
+      "runner_output_truncated": false,
+      "timed_out": false
+    },
+    "ok": true,
+    "sequence": 10,
+    "tool_name": "run_ruff"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "added_lines": 1,
+      "changed_files": [
+        "app/main.py"
+      ],
+      "deleted_lines": 1,
+      "diff_chars": 354,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 11,
+    "tool_name": "show_git_diff"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "changed_files": [
+        "app/main.py"
+      ]
+    },
+    "ok": true,
+    "sequence": 12,
+    "tool_name": "submit_repair"
+  }
+]

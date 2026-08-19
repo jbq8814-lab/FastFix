@@ -1,0 +1,7 @@
+{
+  "regression_tests_passed": true,
+  "ruff_passed": false,
+  "sandbox_image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+  "targeted_tests_passed": true,
+  "validation_revision": 1
+}

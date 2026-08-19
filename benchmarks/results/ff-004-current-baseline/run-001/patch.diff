@@ -1,0 +1,23 @@
+diff --git a/app/main.py b/app/main.py
+index 67f11c4..730c156 100644
+--- a/app/main.py
++++ b/app/main.py
+@@ -1,7 +1,7 @@
+-from fastapi import FastAPI
++from fastapi import FastAPI, HTTPException
+ 
+ from app.schemas import UserResponse
+-from app.service import fetch_user
++from app.service import UserNotFoundError, fetch_user
+ 
+ app = FastAPI()
+ 
+@@ -13,4 +13,7 @@ async def health_check() -> dict[str, str]:
+ 
+ @app.get("/users/{user_id}", response_model=UserResponse)
+ async def get_user(user_id: int) -> dict[str, object]:
+-    return await fetch_user(user_id)
++    try:
++        return await fetch_user(user_id)
++    except UserNotFoundError:
++        raise HTTPException(status_code=404, detail="User not found")

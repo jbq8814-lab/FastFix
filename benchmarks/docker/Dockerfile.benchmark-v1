@@ -1,0 +1,10 @@
+FROM python:3.12-slim
+
+COPY requirements.benchmark-v1.txt /opt/fastfix/requirements.txt
+RUN python -m pip install --no-cache-dir -r /opt/fastfix/requirements.txt
+
+COPY validation_runner.py /opt/fastfix/validation_runner.py
+
+ENV PYTHONDONTWRITEBYTECODE=1
+USER 65532:65532
+ENTRYPOINT ["python", "/opt/fastfix/validation_runner.py"]

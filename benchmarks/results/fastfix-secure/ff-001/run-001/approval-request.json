@@ -1,0 +1,24 @@
+{
+  "added_lines": 1,
+  "candidate_head": "3f1b3a91593f7808a329f5f6ff3ad15c8991768e",
+  "changed_files": [
+    "app/main.py"
+  ],
+  "created_at": "2026-07-27T15:53:52.549606Z",
+  "deleted_lines": 1,
+  "patch_sha256": "18e8762efc5eba9740a887ff7ff586c7dd9f6a5fc97b96e690e3ac2f12374cde",
+  "regression_tests_passed": true,
+  "request_id": "856cac1c-d928-4e3b-ace1-bf8b26a2d95a",
+  "risk_notes": [
+    "Candidate patch is pending explicit human approval."
+  ],
+  "ruff_passed": true,
+  "sandbox_image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+  "sandbox_network_mode": "none",
+  "schema_version": "1.0",
+  "source_head": "3f1b3a91593f7808a329f5f6ff3ad15c8991768e",
+  "status": "pending",
+  "targeted_tests_passed": true,
+  "task_id": "FF-001",
+  "validation_revision": 1
+}

@@ -1,0 +1,195 @@
+[
+  {
+    "error_code": null,
+    "metadata": {
+      "entry_count": 8,
+      "root": ".",
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 1,
+    "tool_name": "show_tree"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "end_line": 22,
+      "path": "app/main.py",
+      "start_line": 1,
+      "total_lines": 22,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 2,
+    "tool_name": "read_file"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "end_line": 14,
+      "path": "app/dependencies.py",
+      "start_line": 1,
+      "total_lines": 14,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 3,
+    "tool_name": "read_file"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "end_line": 23,
+      "path": "tests/test_access.py",
+      "start_line": 1,
+      "total_lines": 23,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 4,
+    "tool_name": "read_file"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "bytes_after": 381,
+      "bytes_before": 375,
+      "changed_files": [
+        "app/dependencies.py"
+      ],
+      "path": "app/dependencies.py",
+      "replacement_count": 1
+    },
+    "ok": true,
+    "sequence": 5,
+    "tool_name": "replace_text"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "candidate_writable": false,
+      "container_exit_code": 0,
+      "container_id": "023e7b5d3ae095deb6592d497d31f3b3c8faf2ce7f3d939d0ae0e0bf0c3d68ca",
+      "container_name": "fastfix-validation-76e2f7c61c984495814d4a0aac80db74",
+      "container_oom_killed": false,
+      "container_state_error": "",
+      "container_uid": 65532,
+      "docker_architecture": "amd64",
+      "docker_os_type": "linux",
+      "docker_server_version": "29.6.2",
+      "docker_socket_present": false,
+      "duration_seconds": 0.618,
+      "failed": null,
+      "image_digest": "fastfix-validation@sha256:ae97b783a4a4af094d79e1409f802d0732bee82ad82c03a6eee59203934db4ae",
+      "image_id": "sha256:ae97b783a4a4af094d79e1409f802d0732bee82ad82c03a6eee59203934db4ae",
+      "image_reference": "fastfix-validation:benchmark-v1",
+      "network_mode": "none",
+      "output_truncated": false,
+      "passed": 1,
+      "returncode": 0,
+      "runner_output_truncated": false,
+      "scope": "targeted",
+      "skipped": null,
+      "targets": [
+        "tests/test_access.py::test_invalid_api_key_is_rejected"
+      ],
+      "timed_out": false
+    },
+    "ok": true,
+    "sequence": 6,
+    "tool_name": "run_pytest"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "candidate_writable": false,
+      "container_exit_code": 0,
+      "container_id": "3691ef3821ee85c516cbac3e14840e6312cc4c302f615172e5230dc66fd7b9b6",
+      "container_name": "fastfix-validation-e3f177eba0d4416fb7886451c1fe4676",
+      "container_oom_killed": false,
+      "container_state_error": "",
+      "container_uid": 65532,
+      "docker_architecture": "amd64",
+      "docker_os_type": "linux",
+      "docker_server_version": "29.6.2",
+      "docker_socket_present": false,
+      "duration_seconds": 0.617,
+      "failed": null,
+      "image_digest": "fastfix-validation@sha256:ae97b783a4a4af094d79e1409f802d0732bee82ad82c03a6eee59203934db4ae",
+      "image_id": "sha256:ae97b783a4a4af094d79e1409f802d0732bee82ad82c03a6eee59203934db4ae",
+      "image_reference": "fastfix-validation:benchmark-v1",
+      "network_mode": "none",
+      "output_truncated": false,
+      "passed": 3,
+      "returncode": 0,
+      "runner_output_truncated": false,
+      "scope": "regression",
+      "skipped": null,
+      "targets": [
+        "tests"
+      ],
+      "timed_out": false
+    },
+    "ok": true,
+    "sequence": 7,
+    "tool_name": "run_pytest"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "candidate_writable": false,
+      "container_exit_code": 0,
+      "container_id": "5b44b4922038c4146e158bb9164a3c3049db113f0529665caaa09678d64ebd28",
+      "container_name": "fastfix-validation-e66966b28340465d9bd8aa8a3d98b125",
+      "container_oom_killed": false,
+      "container_state_error": "",
+      "container_uid": 65532,
+      "docker_architecture": "amd64",
+      "docker_os_type": "linux",
+      "docker_server_version": "29.6.2",
+      "docker_socket_present": false,
+      "duration_seconds": 0.033,
+      "image_digest": "fastfix-validation@sha256:ae97b783a4a4af094d79e1409f802d0732bee82ad82c03a6eee59203934db4ae",
+      "image_id": "sha256:ae97b783a4a4af094d79e1409f802d0732bee82ad82c03a6eee59203934db4ae",
+      "image_reference": "fastfix-validation:benchmark-v1",
+      "network_mode": "none",
+      "output_truncated": false,
+      "passed": true,
+      "paths": [
+        "app"
+      ],
+      "returncode": 0,
+      "runner_output_truncated": false,
+      "timed_out": false
+    },
+    "ok": true,
+    "sequence": 8,
+    "tool_name": "run_ruff"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "added_lines": 1,
+      "changed_files": [
+        "app/dependencies.py"
+      ],
+      "deleted_lines": 1,
+      "diff_chars": 456,
+      "truncated": false
+    },
+    "ok": true,
+    "sequence": 9,
+    "tool_name": "show_git_diff"
+  },
+  {
+    "error_code": null,
+    "metadata": {
+      "changed_files": [
+        "app/dependencies.py"
+      ]
+    },
+    "ok": true,
+    "sequence": 10,
+    "tool_name": "submit_repair"
+  }
+]

@@ -1,0 +1,12 @@
+diff --git a/app/main.py b/app/main.py
+index c68cf50..252b6bf 100644
+--- a/app/main.py
++++ b/app/main.py
+@@ -11,6 +11,6 @@ async def health_check() -> dict[str, str]:
+     return {"status": "ok"}
+ 
+ 
+-@app.post("/users", response_model=UserResponse)
++@app.post("/users", response_model=UserResponse, status_code=201)
+ async def create_user_endpoint(payload: UserCreate) -> dict[str, object]:
+     return await create_user(payload.name)

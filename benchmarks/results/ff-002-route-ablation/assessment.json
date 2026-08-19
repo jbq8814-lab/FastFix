@@ -1,0 +1,16 @@
+{
+  "comparison_valid": false,
+  "experiment_name": "FF-002 FastAPI route inspection targeted ablation",
+  "performance_conclusion": null,
+  "prohibited_performance_conclusions": [
+    "token_usage_improvement",
+    "tool_call_reduction",
+    "elapsed_time_improvement",
+    "repair_success_rate_improvement"
+  ],
+  "provider_failure_confounded": true,
+  "reason": "The route arm did not invoke the route inspection tool and ended after exhausted provider failures. Token, tool-call, elapsed-time, and resolution differences cannot be attributed to the route tool integration.",
+  "route_tool_invoked": false,
+  "schema_version": "1.0",
+  "task_id": "ff-002-path-parameter-mismatch"
+}

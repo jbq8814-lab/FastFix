@@ -1,0 +1,8 @@
+diff --git a/app/config.py b/app/config.py
+--- a/app/config.py
++++ b/app/config.py
+@@ -4,3 +4,3 @@
+ def get_app_name() -> str:
+-    app_name = os.getenv("FASTFIX_SERVICE_NAME", "FastFix")
++    app_name = os.getenv("FASTFIX_APP_NAME", "FastFix")
+     return app_name

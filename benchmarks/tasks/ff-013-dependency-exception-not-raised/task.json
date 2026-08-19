@@ -1,0 +1,28 @@
+{
+  "task_id": "FF-013",
+  "title": "The protected endpoint accepts invalid credentials",
+  "category": "fastapi_dependency_exception_propagation",
+  "provenance": "synthetic",
+  "fixture_repo": "benchmarks/fixture_repos/ff-013-dependency-exception-not-raised",
+  "issue_file": "benchmarks/tasks/ff-013-dependency-exception-not-raised/issue.md",
+  "gold_patch": "benchmarks/tasks/ff-013-dependency-exception-not-raised/gold.patch",
+  "failing_tests": [
+    "tests/test_access.py::test_invalid_api_key_is_rejected"
+  ],
+  "test_command": "python -m pytest -q",
+  "ruff_command": "python -m ruff check .",
+  "allowed_paths": [
+    "app"
+  ],
+  "buggy_files": [
+    "app/dependencies.py"
+  ],
+  "expected_buggy_result": {
+    "passed": 2,
+    "failed": 1
+  },
+  "expected_fixed_result": {
+    "passed": 3,
+    "failed": 0
+  }
+}

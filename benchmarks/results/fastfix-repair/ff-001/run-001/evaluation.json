@@ -1,0 +1,20 @@
+{
+  "submitted": false,
+  "diff_non_empty": false,
+  "changed_files_allowed": false,
+  "tests_unchanged": true,
+  "targeted_tests_passed": false,
+  "regression_tests_passed": false,
+  "ruff_passed": false,
+  "expected_change_present": false,
+  "resolved": false,
+  "reasons": [
+    "submitted",
+    "diff_non_empty",
+    "changed_files_allowed",
+    "targeted_tests_passed",
+    "regression_tests_passed",
+    "ruff_passed",
+    "expected_change_present"
+  ]
+}

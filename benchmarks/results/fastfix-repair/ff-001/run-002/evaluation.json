@@ -1,0 +1,12 @@
+{
+  "submitted": true,
+  "diff_non_empty": true,
+  "changed_files_allowed": true,
+  "tests_unchanged": true,
+  "targeted_tests_passed": true,
+  "regression_tests_passed": true,
+  "ruff_passed": true,
+  "expected_change_present": true,
+  "resolved": true,
+  "reasons": []
+}

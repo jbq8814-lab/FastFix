@@ -1,0 +1,28 @@
+{
+  "task_id": "FF-011",
+  "title": "The current-user endpoint returns a validation error",
+  "category": "fastapi_route_ordering",
+  "provenance": "synthetic",
+  "fixture_repo": "benchmarks/fixture_repos/ff-011-static-route-shadowed",
+  "issue_file": "benchmarks/tasks/ff-011-static-route-shadowed/issue.md",
+  "gold_patch": "benchmarks/tasks/ff-011-static-route-shadowed/gold.patch",
+  "failing_tests": [
+    "tests/test_users.py::test_current_user"
+  ],
+  "test_command": "python -m pytest -q",
+  "ruff_command": "python -m ruff check .",
+  "allowed_paths": [
+    "app"
+  ],
+  "buggy_files": [
+    "app/main.py"
+  ],
+  "expected_buggy_result": {
+    "passed": 2,
+    "failed": 1
+  },
+  "expected_fixed_result": {
+    "passed": 3,
+    "failed": 0
+  }
+}

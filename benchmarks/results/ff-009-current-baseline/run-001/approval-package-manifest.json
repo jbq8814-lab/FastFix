@@ -1,0 +1,21 @@
+{
+  "files": [
+    {
+      "bytes": 829,
+      "path": "approval-request.json",
+      "sha256": "7243338ce5ab559c9ba894e68814a11138422c70259ed346205c7d95734026cd"
+    },
+    {
+      "bytes": 462,
+      "path": "patch.diff",
+      "sha256": "4bee50abf5eddac81332ae5ec1f7120d64f02926a2f43b4d834b8b38d37ea0ae"
+    },
+    {
+      "bytes": 728,
+      "path": "validation-summary.json",
+      "sha256": "42defc11664434c7b1b05099328f9a3827546e7bed9b0350f32e5678f759c23f"
+    }
+  ],
+  "request_id": "66ed76ed-fbd7-48e3-a1cc-76e58f81db74",
+  "schema_version": "1.0"
+}

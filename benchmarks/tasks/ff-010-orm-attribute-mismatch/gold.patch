@@ -1,0 +1,7 @@
+diff --git a/app/models.py b/app/models.py
+--- a/app/models.py
++++ b/app/models.py
+@@ -9,2 +9,2 @@ class User(Base):
+     id: Mapped[int] = mapped_column(primary_key=True)
+-    username: Mapped[str] = mapped_column("name")
++    name: Mapped[str] = mapped_column("name")

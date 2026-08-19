@@ -1,0 +1,24 @@
+{
+  "added_lines": 1,
+  "candidate_head": "c47b43a2af9be30df5a7f9a2e8ef99a9e0fedfc2",
+  "changed_files": [
+    "app/schemas.py"
+  ],
+  "created_at": "2026-07-28T06:38:31.446971Z",
+  "deleted_lines": 1,
+  "patch_sha256": "24fee7a6c8efc30e7a45c2bc6057b83f05503071d3817519ed123dfd3bf7b373",
+  "regression_tests_passed": true,
+  "request_id": "f7977a2c-2410-40c5-8d25-0d0a72755c85",
+  "risk_notes": [
+    "Candidate patch is pending explicit human approval."
+  ],
+  "ruff_passed": true,
+  "sandbox_image_id": "sha256:9adffedee8f14d04fde698bf32955a46093300a7280f07bfc4650b145f7ea38f",
+  "sandbox_network_mode": "none",
+  "schema_version": "1.0",
+  "source_head": "c47b43a2af9be30df5a7f9a2e8ef99a9e0fedfc2",
+  "status": "pending",
+  "targeted_tests_passed": true,
+  "task_id": "ff-003-response-model-field-mismatch",
+  "validation_revision": 1
+}

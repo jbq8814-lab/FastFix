@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "record_type": "assessment_amendment",
+  "task_id": "ff-014-awaiting-sync-service",
+  "attempt": "run-001",
+  "created_at": "2026-07-31T00:08:22.5675038+08:00",
+  "amendment_type": "semantic_scope_correction",
+  "original_assessment": {
+    "path": "benchmarks/results/ff-014-current-baseline/run-001/assessment.json",
+    "sha256": "9ec5f148fa395bbcea8b549631c57ae8fd9a17dc7df8092b2324a2c87b6ce133"
+  },
+  "patch_evidence": [
+    {
+      "role": "candidate",
+      "path": "benchmarks/results/ff-014-current-baseline/run-001/patch.diff",
+      "sha256": "cd00c5572938af493b4406944f9c7a2c4227387472f333f891e6dc140591dd1c"
+    },
+    {
+      "role": "gold",
+      "path": "benchmarks/tasks/ff-014-awaiting-sync-service/gold.patch",
+      "sha256": "640bd9b9cc05af5aafcf76b1991fa5240be19fd0765d025dd911931fe0f597e9"
+    }
+  ],
+  "confirmed_facts": {
+    "candidate_removes_incorrect_await": true,
+    "candidate_changes_handler_from_async_to_sync": true,
+    "gold_removes_incorrect_await": true,
+    "gold_preserves_async_handler": true,
+    "candidate_targeted_regression_and_ruff_passed": true,
+    "gold_targeted_regression_and_ruff_passed": true,
+    "fixture_behavior_match": true,
+    "full_semantic_equivalence": null
+  },
+  "semantic_scope": "The frozen fixture supports equivalent tested HTTP behavior only; full runtime semantic equivalence is not established.",
+  "inferences_or_uncertainties": [
+    "Synchronous and asynchronous FastAPI handlers may differ in execution scheduling and thread context.",
+    "The frozen fixture does not test those broader runtime differences."
+  ]
+}

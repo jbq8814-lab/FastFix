@@ -1,0 +1,28 @@
+{
+  "task_id": "FF-006",
+  "title": "Created users return the wrong HTTP status",
+  "category": "fastapi_status_code",
+  "provenance": "synthetic",
+  "fixture_repo": "benchmarks/fixture_repos/ff-006-wrong-created-status",
+  "issue_file": "benchmarks/tasks/ff-006-wrong-created-status/issue.md",
+  "gold_patch": "benchmarks/tasks/ff-006-wrong-created-status/gold.patch",
+  "failing_tests": [
+    "tests/test_users.py::test_create_user_returns_created_response"
+  ],
+  "test_command": "python -m pytest -q",
+  "ruff_command": "python -m ruff check .",
+  "allowed_paths": [
+    "app"
+  ],
+  "buggy_files": [
+    "app/main.py"
+  ],
+  "expected_buggy_result": {
+    "passed": 1,
+    "failed": 1
+  },
+  "expected_fixed_result": {
+    "passed": 2,
+    "failed": 0
+  }
+}

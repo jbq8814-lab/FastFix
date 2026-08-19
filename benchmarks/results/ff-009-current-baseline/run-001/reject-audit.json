@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "audit_type": "release_preparation_reject_closeout",
+  "task_id": "ff-009-session-lifecycle",
+  "run_id": "run-001",
+  "session_id": "71fc0eee-9abf-4636-8304-f92b01fb7410",
+  "runtime_status_before_closeout": "approval_pending",
+  "runtime_status_after_closeout": "rejected",
+  "original_run_artifacts_unchanged": true,
+  "candidate_applied": false,
+  "candidate_cleaned": true,
+  "source_unchanged": true,
+  "canonical_fixture_unchanged": true,
+  "source_head": "7b9490b256e75f18b2815e33752acd7a2e3b374e",
+  "approval_request": {
+    "path": "approval-request.json",
+    "request_id": "66ed76ed-fbd7-48e3-a1cc-76e58f81db74",
+    "sha256": "7243338ce5ab559c9ba894e68814a11138422c70259ed346205c7d95734026cd"
+  },
+  "candidate_patch": {
+    "path": "patch.diff",
+    "changed_files": [
+      "app/database.py"
+    ],
+    "sha256": "4bee50abf5eddac81332ae5ec1f7120d64f02926a2f43b4d834b8b38d37ea0ae"
+  },
+  "approval_package_manifest": {
+    "path": "approval-package-manifest.json",
+    "sha256": "75898ad83aeaaac98c213f23649259202778b5cf92c20415abec443d86fa3fac"
+  },
+  "decision_record": {
+    "path": "reject-decision.json",
+    "decision": "reject",
+    "actor": "fastfix-release-audit-closeout",
+    "decided_at": "2026-07-30T12:32:59.331073Z",
+    "sha256": "b2ca1c8b95d6f69e538c2eab971f2194abf2eb4cd441cbaaf3912c948afa6b58"
+  },
+  "closeout_note": "FF-009 was still approval_pending after run-001. The real Reject was executed during release preparation on 2026-07-30, did not apply the Candidate, and must not be interpreted as an action completed during the original baseline run."
+}

@@ -1,0 +1,12 @@
+diff --git a/app/main.py b/app/main.py
+index 276a66b..de69b0a 100644
+--- a/app/main.py
++++ b/app/main.py
+@@ -12,5 +12,5 @@ async def health_check() -> dict[str, str]:
+ 
+ 
+ @app.get("/users/{id}", response_model=UserResponse)
+-async def get_user(user_id: int) -> dict[str, object]:
+-    return await fetch_user(user_id)
++async def get_user(id: int) -> dict[str, object]:
++    return await fetch_user(id)

@@ -1,0 +1,8 @@
+{
+  "benchmark_eligible": false,
+  "benchmark_attempt": null,
+  "failure_stage": "model_provider_resolution",
+  "failure_category": "configuration_error",
+  "assistant_response_count": 0,
+  "reason": "LiteLLM could not resolve a provider before returning an assistant response."
+}

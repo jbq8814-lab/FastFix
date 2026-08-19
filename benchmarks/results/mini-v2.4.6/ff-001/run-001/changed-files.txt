@@ -1,0 +1,5 @@
+app/__pycache__/__init__.cpython-312.pyc
+app/__pycache__/main.cpython-312.pyc
+app/__pycache__/schemas.cpython-312.pyc
+app/__pycache__/service.cpython-312.pyc
+tests/__pycache__/test_users.cpython-312-pytest-9.1.1.pyc
