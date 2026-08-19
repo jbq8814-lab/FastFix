@@ -4396,7 +4396,7 @@ This will almost always default to <code>litellm</code> (with Anthropic models b
 <p>On top, there's a few more exotic model classes that you can use:</p>
 <ul>
 <li><strong><code>deterministic</code></strong> (<a href="../../reference/models/test_models/"><code>DeterministicModel</code></a>) - Returns predefined responses for testing and development purposes.</li>
-<li><strong><code>minisweagent.models.extra.roulette.RouletteModel</code> and <code>minisweagent.models.extra.roulette.InterleavingModel</code></strong> (<a href="../../reference/models/extra/"><code>RouletteModel</code></a> and <a href="../../reference/models/extra/"><code>InterleavingModel</code></a>) - Randomly selects or interleaves multiple configured models for each query. See <a href="https://www.swebench.com/SWE-bench/blog/2025/08/19/mini-roulette/">this blog post</a> for more details.</li>
+<li><strong><code>minisweagent.models.extra.roulette.RouletteModel</code> and <code>minisweagent.models.extra.roulette.InterleavingModel</code></strong> (<a href="../../reference/models/extra/"><code>RouletteModel</code></a> and <a href="../../reference/models/extra/"><code>InterleavingModel</code></a>) - Randomly selects or interleaves multiple configured models for each query. See <a href="https://www.swebench.com/post-250820-mini-roulette.html">this blog post</a> for more details.</li>
 </ul>
 <p>As with the last two, you can also specify any import path to your own custom model class (even if it is not yet part of the mini-SWE-agent package).</p>
 <div class="grid cards">
