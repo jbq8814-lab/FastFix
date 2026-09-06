@@ -149,7 +149,7 @@ model:
 
 ### Generating SWE-bench trajectories with vLLM
 
-This example shows how to generate SWE-bench trajectories using [vLLM](https://docs.vllm.ai/en/latest/) as the local inference engine.
+This example shows how to generate SWE-bench trajectories using [vLLM](https://github.com/vllm-project/vllm/tree/main/docs) as the local inference engine.
 
 First, launch a vLLM server with your chosen model. For example:
 
